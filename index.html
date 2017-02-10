@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>::Troubling: Spacing Problem During use of Display Inline Elements::</title>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+<style type="text/css">
+body { font-family: 'Open Sans', sans-serif;}
+.container { margin: 30px 20px; padding: 20px 30px; background: #f2f2f2;}
+h1 { font-size: 30px; line-height: 40px; color: #333333;}
+h2 { margin: 0px 0px 15px; font-size: 24px; line-height: 34px; color: #333333;}
+h3 { margin: 0px 0px 15px; font-size: 22px; line-height: 28px; color: #666;}
+h4 { margin: 15px 0; font-size: 18px; line-height: 22px; color: #333333;}
+ul.inline-list { margin: 0px; padding: 0px; list-style: none;}
+ul.inline-list li 
+{
+	display: inline-block;
+	padding: 8px;
+	background: #000;
+	font-size: 16px;
+}
+ul.inline-list li a
+{
+	text-decoration: none;
+	color: #ffffff;
+}
+.block { margin-bottom: 30px; padding: 20px 30px 30px; background: #ffffff;}
+ul.font-zero { font-size: 0px;}
+ul.margin-list li { margin-left: -4px;}
+ul.margin-list li:first-child { margin-left: 0px;}
+ul.float-list { margin: 0px; padding: 0px; list-style: none;}
+ul.float-list li 
+{
+	float: left;
+	padding: 8px;
+	background: #000;
+	font-size: 16px;
+}
+ul.float-list li a
+{
+	text-decoration: none;
+	color: #ffffff;
+}
+.clear { clear: both;}
+ul.flex-list { margin: 0px; padding: 0px; display: flex; display: -webkit-flex; list-style: none;}
+ul.flex-list li { padding: 8px; background: #000; font-size: 16px;}
+ul.flex-list li a { text-decoration: none; color: #ffffff;}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Troubling: White Space Problem During use of Display Inline Elements</h1>
+    <div class="block">
+    	<h2>Actual Result:</h2>
+        <ul class="inline-list">
+            <li><a href="#">Element 1</a></li>
+            <li><a href="#">Element 2</a></li>
+            <li><a href="#">Element 3</a></li>
+        </ul>
+    </div>
+    <div class="block">
+    	<h2>Solution 1: Apply font-size: 0 to the parent</h2>
+        <ul class="inline-list font-zero">
+            <li><a href="#">Element 1</a></li>
+            <li><a href="#">Element 2</a></li>
+            <li><a href="#">Element 3</a></li>
+        </ul>
+    </div>
+    <div class="block">
+    	<h2>Solution 2: Minimize the HTML</h2>
+        <h3>Drop Closing Angle</h3>
+        <ul class="inline-list">
+            <li><a href="#">Element 1</a></li
+            ><li><a href="#">Element 2</a></li
+            ><li><a href="#">Element 3</a></li>
+        </ul>
+        <h4>Or</h4>
+        <h3>Drop element Closing angle with the content</h3>
+        <ul class="inline-list">
+            <li>
+            <a href="#">Element 1</a></li><li><a href="#">
+            Element 2</a></li><li><a href="#">Element 3</a></li>
+        </ul>
+        <h4>Or</h4>
+        <h3>Make all Element in Single Row</h3>
+        <ul class="inline-list">
+            <li><a href="#">Element 1</a></li><li><a href="#">Element 2</a></li><li><a href="#">Element 3</a></li>
+        </ul>
+    </div>
+    <div class="block">
+    	<h2>Solution 3: HTML Comments or Avoid Closing Tag for that</h2>
+        <h3>Simply apply HTML Comments between elements</h3>
+        <ul class="inline-list">
+            <li><a href="#">Element 1</a></li><!--
+            --><li><a href="#">Element 2</a></li><!--
+            --><li><a href="#">Element 3</a></li>
+        </ul>
+        <h4>Or</h4>
+        <h3>Avoid closing tag of each element</h3>
+        <ul class="inline-list">
+            <li><a href="#">Element 1</a>
+            <li><a href="#">Element 2</a>
+            <li><a href="#">Element 3</a>
+        </ul>
+    </div>
+    <div class="block">
+    	<h2>Solution 4: Oppose Margin with the elements</h2>
+        <ul class="inline-list margin-list">
+            <li><a href="#">Element 1</a></li>
+            <li><a href="#">Element 2</a></li>
+            <li><a href="#">Element 3</a></li>
+        </ul>
+    </div>
+    <div class="block">
+    	<h2>Solution 5: Applying Flex</h2>
+        <ul class="flex-list">
+            <li><a href="#">Element 1</a></li>
+            <li><a href="#">Element 2</a></li>
+            <li><a href="#">Element 3</a></li>
+        </ul>
+    </div>
+    <div class="block">
+    	<h2>Solution 6: Applying Float</h2>
+        <ul class="float-list">
+            <li><a href="#">Element 1</a></li>
+            <li><a href="#">Element 2</a></li>
+            <li><a href="#">Element 3</a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+</html>
